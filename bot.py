@@ -13,7 +13,7 @@ bot = telegram.Bot(token='375084271:AAEguAYJ51fb4HxooL3a7RJp_vGUJ9xR0xY')
 def webhook_handler():
     if request.method == "POST":
         msg = request.data
-        echo msg
+        print msg
         # retrieve the message in JSON and then transform it to Telegram object
         # update = telegram.Update.de_json(request.get_json(force=True))
 
