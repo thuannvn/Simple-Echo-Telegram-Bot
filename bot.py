@@ -11,8 +11,8 @@ bot = telegram.Bot(token='375084271:AAEguAYJ51fb4HxooL3a7RJp_vGUJ9xR0xY')
 
 @app.route('/HOOK', methods=['POST'])
 def webhook_handler():
+    print "Method: " + request.json
     if request.method == "POST":
-        print request.json
         msg = request.data
         print "Message: " + msg
         # retrieve the message in JSON and then transform it to Telegram object
