@@ -12,16 +12,18 @@ bot = telegram.Bot(token='375084271:AAEguAYJ51fb4HxooL3a7RJp_vGUJ9xR0xY')
 @app.route('/HOOK', methods=['POST'])
 def webhook_handler():
     if request.method == "POST":
+        msg = request.data
+        echo msg
         # retrieve the message in JSON and then transform it to Telegram object
-        update = telegram.Update.de_json(request.get_json(force=True))
+        # update = telegram.Update.de_json(request.get_json(force=True))
 
-        chat_id = update.message.chat.id
+        #chat_id = update.message.chat.id
 
         # Telegram understands UTF-8, so encode text for unicode compatibility
-        text = update.message.text.encode('utf-8')
+        #text = update.message.text.encode('utf-8')
 
         # repeat the same message back (echo)
-        bot.sendMessage(chat_id=chat_id, text=text)
+        #bot.sendMessage(chat_id=chat_id, text=text)
 
     return 'ok'
 
